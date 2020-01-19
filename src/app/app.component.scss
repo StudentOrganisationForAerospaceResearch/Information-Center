@@ -1,0 +1,19 @@
+$row-width: 400px;
+
+.container {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 450px auto 450px;
+    grid-template-rows: 40px $row-width $row-width $row-width;
+    gap: 3px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}

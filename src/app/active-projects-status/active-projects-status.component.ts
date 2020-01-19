@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjectStatus } from '../project-data';
-
 @Component({
   selector: 'app-active-projects-status',
   templateUrl: './active-projects-status.component.html',
@@ -9,14 +7,14 @@ import { ProjectStatus } from '../project-data';
 })
 export class ActiveProjectsStatusComponent implements OnInit {
   activeProjects = [
-    {"name": "Andromeda III", "status": ProjectStatus.DESIGN},
-    {"name": "Ouroboros Engine", "status": ProjectStatus.MANUFACTURE}
+    {name: "Andromeda III", status: "Design"},
+    {name: "Ouroboros Engine", status: "Manufacturing"}
   ]
 
-  project_status_map = new Map<number, string>([
-    [ProjectStatus.DESIGN, "Design"],
-    [ProjectStatus.MANUFACTURE, "Manufacture"],
-    [ProjectStatus.TEST, "Test"]
+  project_status_map = new Map<string, string>([
+    ["Design", "20%"],
+    ["Manufacturing", "50%"],
+    ["Testing", "80%"]
   ])
 
   constructor() { }

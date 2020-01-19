@@ -1,9 +1,9 @@
 <h2>Active Project Status ⏱️</h2>
 <ul>
   <li *ngFor="let project of activeProjects">
-    <strong>{{ project.name }}:</strong> {{ project_status_map.get(project.status) }}
+    <strong>{{ project.name }}:</strong> {{ project.status }}
     <div class="status-meter">
-      <span style="width: 50%"></span>
+      <span [ngStyle]="{width: project_status_map.get(project.status)}"></span>
     </div>
   </li>
 </ul>
