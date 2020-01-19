@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetComponent implements OnInit {
   // Pie
-  public pieChartLabels:string[] = ['Ground Systems', 'Proplusion', 'Avionics', 'Payload',''];
-  public pieChartData:number[] = [40, 20, 20, 10, 10];
+  public pieChartLabels:string[] = [
+    'Ground Systems',
+    'Proplusion',
+    'Avionics',
+    'Payload',
+    'Recovery',
+    'Airframe'
+  ];
+  public pieChartData:number[] = [30, 20, 20, 10, 10, 10];
   public pieChartType:string = 'pie';
 
   constructor() { }
