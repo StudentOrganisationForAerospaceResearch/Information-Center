@@ -1,0 +1,23 @@
+:host {
+    border: 3px solid black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 10px;
+}
+
+iframe {
+    border: solid 1px #777;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .hr {
+        width: 100%;
+    }
+}
