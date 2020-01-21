@@ -17,3 +17,32 @@ $row-width: 400px;
     grid-row-start: 1;
     grid-row-end: 2;
 }
+
+// Defaults
+$start-col: 1;
+$end-col: 2;
+$start-row: 2;
+$end-row: 3;
+
+.base {
+    border: 3px solid black;
+    grid-column-start: $start-col;
+    grid-column-end: $end-col;
+    grid-row-start: $start-row;
+    grid-row-end: $end-row;
+    padding: 10px;
+}
+
+.upper-left {
+    grid-column-start: $start-col + 2;
+    grid-column-end: $end-col + 2;
+    grid-row-start: $start-row;
+    grid-row-end: $end-row;
+}
+
+.lower-left {
+    grid-column-start: $start-col + 2;
+    grid-column-end: $end-col + 2;
+    grid-row-start: $start-row + 1;
+    grid-row-end: $end-row + 1;
+}
