@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+
 import { SpreadSheetData } from './spreadsheet-data.model';
 
 @Component({
@@ -10,7 +10,8 @@ import { SpreadSheetData } from './spreadsheet-data.model';
 })
 export class AppComponent implements OnInit {
   title = 'soar-information-center';
-  sheetData: SpreadSheetData[] = [];
+  projectUpdates: SpreadSheetData[] = [];
+  projectInfo: SpreadSheetData[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -18,11 +19,17 @@ export class AppComponent implements OnInit {
     const url = "https://sheet.best/api/sheets/4f88bc31-a0c9-451e-8ecd-7fa2b667563d";
     this.http.get<SpreadSheetData[]>(url).subscribe(sheetData => {
       sheetData.forEach(dataPoint => {
-        this.sheetData.push({
+        this.projectUpdates.push({
           project: dataPoint["Project"],
           date: dataPoint["Date"],
           updateType: dataPoint["Type of Update"],
           updateMessage: dataPoint["Update Message"]
+        })
+        this.projectInfo.push({
+          project: dataPoint["Project Name"],
+          updateMessage: dataPoint["Project Description"],
+          updateType: "Description",
+          date: dataPoint["Date"]
         })
       })
     })

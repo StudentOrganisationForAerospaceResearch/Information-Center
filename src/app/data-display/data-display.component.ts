@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { SpreadSheetData } from '../spreadsheet-data.model';
 
@@ -7,17 +7,9 @@ import { SpreadSheetData } from '../spreadsheet-data.model';
   templateUrl: './data-display.component.html',
   styleUrls: ['./data-display.component.scss']
 })
-export class DataDisplayComponent implements OnInit {
+export class DataDisplayComponent {
   @Input() title: string;
   @Input() updateType: string;
   @Input() spreadSheetData: SpreadSheetData[] = [];
-
-  relevantData: SpreadSheetData[];
-
-  constructor() { }
-
-  ngOnInit() {
-    this.relevantData = this.spreadSheetData;
-  }
 
 }
