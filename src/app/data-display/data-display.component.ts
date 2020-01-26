@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, HostBinding } from '@angular/core';
-import { HttpService } from '../http-service';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { SpreadSheetData } from '../spreadsheet-data.model';
 
 @Component({
   selector: 'app-data-display',
@@ -8,28 +9,15 @@ import { HttpService } from '../http-service';
 })
 export class DataDisplayComponent implements OnInit {
   @Input() title: string;
-  @Input() updateType: string
+  @Input() updateType: string;
+  @Input() spreadSheetData: SpreadSheetData[] = [];
 
-  info = [
-    {
-      project: 'Test Project',
-      updateMessage: 'This is an update'
-    }
-  ]
+  relevantData: SpreadSheetData[];
 
-  constructor(private httpService: HttpService) { }
+  constructor() { }
 
   ngOnInit() {
-    // this.httpService.fetchSheetData().subscribe(sheetData => {
-    //   sheetData.forEach(dataPoint => {
-    //     if (dataPoint.updateType == this.updateType) {
-    //       this.info.push({
-    //         project: dataPoint["Project"],
-    //         updateMessage: dataPoint["Update Message"]
-    //       })
-    //     }
-    //   })
-    // })
+    this.relevantData = this.spreadSheetData;
   }
 
 }
